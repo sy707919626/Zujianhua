@@ -19,7 +19,13 @@ public class ServiceFactory {
     private IMienService mIMienService;
 
     public IloginService getmIloginService() {
+
+        if (mIloginService == null){
+            mIloginService = new EmptyLoginService();
+        }
+
         return mIloginService;
+
     }
 
     public void setmIloginService(IloginService mIloginService) {
@@ -27,6 +33,9 @@ public class ServiceFactory {
     }
 
     public IMienService getmIMienService() {
+        if (mIMienService == null){
+            mIMienService = new EmptyMineService();
+        }
         return mIMienService;
     }
 
